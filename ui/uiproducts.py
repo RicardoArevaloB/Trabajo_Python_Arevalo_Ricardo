@@ -1,6 +1,6 @@
 import modules.corefiles as cf
 import funciones.globales as gf
-import funciones.producto as st
+import funciones.products as st
 import main
 
 def MenuStudent(op : int):
