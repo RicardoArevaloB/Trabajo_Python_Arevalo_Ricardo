@@ -3,7 +3,7 @@ import json
 import funciones.globales as gf
 import modules.corefiles as cf
 import ui.uiproducts as uisSt
-def NewStudent():
+def NewProduct():
     title = """
     *************************
     * REGISTRO DE PRODUCTOS *
@@ -14,17 +14,17 @@ def NewStudent():
     identificacion = input("Ingres el Nro de Id : ")
     codProdut = input("Ingrese Codigo del producto :")
     nombreproductost = input("Ingrese Nombre del producto : ")
-    estudiante = {
+    producto = {
         'identificacion': identificacion,
         'codProdut': codProdut,
         'nombreproductost': nombreproductost
     }
-    cf.AddData('data',identificacion,estudiante)
-    gf.PanCamp.get('data').update({identificacion:estudiante})
-    if(bool(input('Desea registrar otro estudiante S(Si) o Enter(No)'))):
-        NewStudent()
+    cf.AddData('data',identificacion,producto)
+    gf.PanCamp.get('data').update({identificacion:producto})
+    if(bool(input('Desea registrar otro producto S(Si) o Enter(No)'))):
+        NewProduct()
     else:
-       uisSt.MenuStudent(0)
+       uisSt.MenuProduct(0)
 
 def SearchData():
     criterio = input('Ingrese el Nro Identificacion del estudiante: ')
@@ -34,9 +34,9 @@ def SearchData():
 
 def ModifyData():
     dataprodut = SearchData()
-    identificacion,codStudent,nombreStudent,notas = dataprodut.values()
+    identificacion,codprodut,nombreProduct,price = dataprodut.values()
     for key in dataprodut.keys():
-        if (key != 'identificacion' and key != 'notas'):
+        if (key != 'identificacion' and key != 'price'):
             if(bool(input(f'Desea modificar el {key} s(si) o Enter No'))):
                 dataprodut[key] = input(f'Ingrese el nuevo valor para {key} :')
     gf.PanCamp.get('data').update({identificacion:dataprodut})

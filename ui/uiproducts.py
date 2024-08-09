@@ -3,7 +3,7 @@ import funciones.globales as gf
 import funciones.products as st
 import main
 
-def MenuStudent(op : int):
+def MenuProduct(op : int):
     title = """
     *******************************
     * GESTION DE VENTAS Y COMPRAS *
@@ -19,7 +19,7 @@ def MenuStudent(op : int):
         except ValueError:
             print("Opcion no tiene formato adecuado")
             gf.pausar_pantalla()
-            MenuStudent(0)
+            MenuProduct(0)
         else:
             match (op):
                 case 1:
