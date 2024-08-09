@@ -31,5 +31,5 @@ def mainMenu(op):
                     mainMenu(0)
 if __name__ == '__main__':
     cf.MY_DATABASE = 'data/Productos.json'
-    cf.checkFile(fg.campusAcademic)
+    cf.checkFile(fg.PanCamp)
     mainMenu(0)

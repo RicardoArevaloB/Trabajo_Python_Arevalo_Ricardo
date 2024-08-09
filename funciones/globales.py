@@ -14,6 +14,6 @@ def pausar_pantalla():
   else:
     system("pause")
 
-campusAcademic = {
+PanCamp = {
   "data" : {}
 }
